@@ -2,8 +2,15 @@
 import random
 import string
 
+class stringsets(object):
+    DEFAULT = string.ascii_letters+string.digits+string.punctuation
+    HOMOGLYPH_SAFE = 'abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789'
+    ONLY_LETTERS = string.ascii_letters
+    LETTERS_AND_NUMBERS = string.ascii_letters+string.digits
+    
+    
 def get_random_string(length, 
-                      stringset=string.ascii_letters+string.digits+string.punctuation,
+                      stringset=stringsets.DEFAULT,
                       only_letters=False, 
                       letters_and_numbers=False,
                       ):
@@ -27,9 +34,9 @@ def get_random_string(length,
         return None
     
     if only_letters:
-        stringset = string.ascii_letters
+        stringset = stringsets.ONLY_LETTERS
     elif letters_and_numbers:
-        stringset = string.ascii_letters+string.digits
+        stringset = stringsets.LETTERS_AND_NUMBERS
     
     rand = random.SystemRandom()
     char_list = [rand.choice(stringset) for foo in xrange(length)]

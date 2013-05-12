@@ -2,7 +2,7 @@
 import re
 import time
 import unittest
-from sierra.utils.rand import get_random_string
+from sierra.utils.rand import get_random_string, stringsets
 
 class TestRandomness(unittest.TestCase):
     
@@ -35,6 +35,12 @@ class TestRandomness(unittest.TestCase):
         for x in xrange(1, 101):
             string = get_random_string(50, letters_and_numbers=True)
             self.assertTrue(pat.match(string))
+    
+    def test_homoglyph_safe(self):
+        pat = re.compile('[i1lI0oO]')
+        for x in xrange(1,101):
+            string = get_random_string(50, stringset=stringsets.HOMOGLYPH_SAFE)
+            self.assertFalse(pat.match(string))
         
     
 

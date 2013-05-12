@@ -9,7 +9,7 @@ Documentation on http://github.com/rafaelsierra/sierra-utils-rand
 ''' 
 
 setup(name='sierra-utils-rand',
-      version='1.0',
+      version='1.1',
       description='Utility increase your options with random functions',
       long_description=long_description,
       author='Rafael Sierra',
