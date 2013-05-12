@@ -14,7 +14,7 @@ Just `pip install sierra-utils-rand` (or `python setup.py install`)
 
 This functions is useful to generate tokens and initial passwords.
 
-Usage:
+#### Usage:
 
     >>> from sierra.utils.rand import get_random_string
     >>> get_random_string(20)
@@ -26,7 +26,7 @@ Usage:
     >>> get_random_string(15, letters_and_numbers=True)
     '6bS8KmBtE1Rs5Eg'
 
-Params:
+#### Params:
 
 * `length` - Length of return random string
 * `stringset` - String or iterable of options to generate the random string
